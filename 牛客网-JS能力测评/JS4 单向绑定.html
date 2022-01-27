@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <style>
+            pre{
+                font-size:20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+            请补全JavaScript代码，要求每当id为"input"的输入框值发生改变时触发id为"span"的标签内容同步改变。
+
+            注意：必须使用DOM0级标准事件（onchange）
+        </pre>
+        <hr>
+    	<input id="input" type="text" />
+        <span id="span"></span>
+
+        <script type="text/javascript">
+            // 补全代码
+            input.onchange =()=>{
+                span.innerHTML =input.value;
+            }
+        </script>
+    </body>
+</html>

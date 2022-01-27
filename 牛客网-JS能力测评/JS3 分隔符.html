@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <style>
+            pre{
+                font-size:20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+            请补全JavaScript代码，要求返回参数数字的千分位分隔符字符串。
+        </pre>
+        <hr>
+
+        <script type="text/javascript">
+            function _comma(number) {
+                // 补全代码
+                if(number > 1000){
+                    const arr = (number +'').split('');
+                    for(let i = arr.length;i>3;i-=3){
+                        arr.splice(i-3,0,',');
+                    }
+                    return arr.join('')
+                }else if(number < -1000){
+                    number = -number;
+                    const arr = (number +'').split('');
+                    for(let i = arr.length;i>3;i-=3){
+                        arr.splice(i-3,0,',');
+                    }
+                    return '-' + arr.join('')
+                } else{
+                    return number+'';
+                }
+                
+            }
+            console.log(_comma(-123))  
+        </script>
+    </body>
+</html>
