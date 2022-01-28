@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            pre{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+描述:
+请补全JavaScript代码，要求将字符串参数URL中的参数解析并以对象的形式返回。
+
+示例1
+输入：
+getParams('https://nowcoder.com/online?id=1&salas=1000')
+
+输出：
+{id:1, salas: 100}      
+        </pre>
+        <hr>
+
+        <script>
+            // 第一种
+            // const _getParams = (url) => {
+            //     // 补全代码
+            //     const index = url.indexOf('?');
+            //     const str = url.slice(index+1)
+            //     const arr = str.split('&');
+            //     const obj = {};
+            //     arr.forEach(item=>{
+            //         const temp  =item.split('=');
+            //         obj[temp[0]] = temp[1];
+            //     })
+            //     return obj;
+                
+            // }
+
+            // 第二种
+            const _getParams = (url) => {
+                // 补全代码
+                const arr = url.split('?')[1].split('&');
+                const obj = {};
+                arr.forEach(item=>{
+                    const temp  =item.split('=');
+                    obj[temp[0]] = temp[1];
+                })
+                return obj;
+                
+            }
+
+            console.log(_getParams('https://nowcoder.com/online?id=1&salas=1000'))
+        </script>
+    </body>
+</html>

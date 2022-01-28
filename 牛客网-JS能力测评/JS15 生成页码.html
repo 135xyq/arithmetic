@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <style type="text/css">
+            pre{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+描述:
+请补全JavaScript代码，要求根据参数动态生成"li"标签页码并插入"ul"标签下。要求如下：
+1. "allItem"为总数据项个数，"pageItem"为每页的数据项个数
+2. "li"标签内容为当前页码数，页码从1开始
+
+示例1
+输入：
+_createPage(13,2)
+输出：
+"li"长度为7，"li"内容依次为"1","2","3","4","5","6","7"
+        </pre>
+    	<ul id="ul">
+            
+        </ul>
+        <script type="text/javascript">
+
+            // 第一种
+            // const _createPage = (allItem, pageItem) => {
+            //     // 补全代码
+            //     const pageNum = Math.ceil(allItem / pageItem);
+            //     const container = document.querySelector('#ul');
+            //     for(let i = 1;i<=pageNum;i++){
+            //         const li = document.createElement('li');
+            //         li.innerText = i;
+            //         container.appendChild(li)
+            //     }
+            // }
+
+
+            const _createPage = (allItem, pageItem) => {
+                // 补全代码
+                const pageNum = Math.ceil(allItem / pageItem);
+                let html = '';
+                for(let i = 1;i<=pageNum;i++){
+                    html += '<li>' + i + '</li>'
+                }
+                ul.innerHTML = html;
+            }
+
+            _createPage(13,2)
+        </script>
+    </body>
+</html>

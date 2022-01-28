@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            pre{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+请补全JavaScript代码，要求将数组参数中的多维数组扩展为一维数组并返回该数组。
+
+注意：
+1. 数组参数中仅包含数组类型和数字类型
+
+示例1
+输入：
+[1,[2,[3,[4]]]]
+输出：
+[1,2,3,4]
+        </pre>
+        <hr>
+        
+        <script>
+            const _flatten = arr => {
+                // 补全代码
+                const str = String(arr);
+                return str.split(',').map(item=>+item)
+            }
+
+            console.log(_flatten([1,[2,[3,[4]]]]))
+        </script>
+    </body>
+</html>
