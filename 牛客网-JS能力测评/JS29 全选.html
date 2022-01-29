@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+        <style>
+            pre{
+                font-size: 20px;
+            }
+            ul {
+                list-style: none;
+            }
+        </style>
+    <body>
+        <pre>
+请补全JavaScript代码，实现以下效果：
+1. 选中"全选"框，以下所有选项全部勾选。
+2. 把"全选"框从选中状态勾选成未选中状态，其他复选框全部取消选中效果。
+3. 当其他复选框全部选中，"全选框"为选中状态。
+4. 当其他复选框有一个未选中，"全选框"取消选中状态。
+
+注意：
+1. 必须使用DOM0级标准事件（onchange）
+        </pre>
+        <hr>
+        <ul>
+            <li>全选<input type='checkbox' id='all'></li>
+            <li>Java<input type='checkbox' class='item'></li>
+            <li>javaScript<input type='checkbox' class='item'></li>
+            <li>C++<input type='checkbox' class='item'></li>
+            <li>python<input type='checkbox' class='item'></li>
+            <li>.net<input type='checkbox' class='item'></li>
+        </ul>
+
+        <script>
+            // 第一种方法，不知道为啥，本地调试没问题，就是过不了
+            // 补全代码
+            const items = [...document.getElementsByClassName('item')];
+            const all = document.getElementById('all');
+            let arr = new Array(items.length).fill(false);
+            items.forEach((item,index)=>{
+                item.onchange=function(e){
+                    if(this.checked){
+                        arr[index] = true;
+                    }else{
+                        arr[index] = false;
+                    }
+                    render()  
+                }
+                                  
+            })
+            all.onchange = function(){
+                if(this.checked){
+                    arr = arr.map(item=>item=true)
+                }else{
+                    arr = arr.map(item=>item=false)
+                }
+                render();
+                items.forEach(i=>{
+                    console.log(i.checked)
+                })
+            }
+            function render(){
+                let flag = true;
+                for(let i =0;i<items.length;i++){
+                    if(arr[i]){
+                        items[i].checked = true;
+                    }else{
+                        flag = false;
+                        items[i].checked = false;
+                    }
+                }
+                if(flag){
+                    all.checked = true;
+                }else{
+                    all.checked = false;
+                }
+            }
+
+            // 第二种方法
+            var all = document.getElementById("all")
+            var options = Array.from(document.querySelectorAll(".item"))
+            // 补全代码
+            all.onchange = () => {
+                options.forEach((item) => {
+                    item.checked = all.checked
+                })
+            }
+            options.forEach((item) => {
+                item.onchange = function () {
+                    let isCheckAll = true
+                    options.forEach((item) => {
+                        if (!item.checked) {
+                            isCheckAll = false
+                        }
+                    })
+                    all.checked = isCheckAll
+                }
+            })
+        </script>
+    </body>
+</html>

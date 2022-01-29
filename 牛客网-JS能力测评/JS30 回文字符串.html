@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <style type="text/css">
+            pre{
+                font-size: 20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+            请补全JavaScript代码，要求以boolean的形式返回参数字符串是否为回文字符串。
+        </pre>
+    	<hr>
+        <script type="text/javascript">
+            const _isPalindrome = string => {
+                // 补全代码
+                const length = string.length;
+                for(let i = 0;i<Math.floor(length / 2);i++){
+                    if(string[i]!==string[length-1-i]){
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            console.log(_isPalindrome("asdffdsa"))
+        </script>
+    </body>
+</html>

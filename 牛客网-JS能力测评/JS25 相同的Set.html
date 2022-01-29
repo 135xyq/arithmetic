@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            pre{
+                font-size: 20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+            请补全JavaScript代码，要求以boolean的形式返回两个Set对象参数是否一样，是则返回true，否则返回false。
+        </pre>
+        <hr>
+        
+        <script>
+            const _isSameSet = (s1, s2) => {
+                // 补全代码
+                if(s1.size !== s2.size){
+                    return false;
+                }
+                for (const key of s1){
+                    if(!s2.has(key)){
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            console.log(_isSameSet(new Set([1,21,32,3]),new Set([1,32,21,3])))
+        </script>
+    </body>
+</html>

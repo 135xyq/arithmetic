@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <style type="text/css">
+            pre{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+请补全JavaScript代码，要求以键/值对的对象形式返回参数数组。要求如下：
+1. 键名的数据类型为Symbol
+2. 键值为当前数组项
+3. Symbol的描述为当前数组项
+4. 返回普通对象
+        </pre>
+        <hr>
+    	
+        <script type="text/javascript">
+            const _symbolKey = array => {
+                // 补全代码
+                const obj = {}
+                array.forEach(item=>{
+                   obj[Symbol(item)] = item; 
+                })
+                return obj;
+            }
+
+            console.log(_symbolKey([121,1,2,23,]))
+        </script>
+    </body>
+</html>
