@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>FED4 快速排序</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        const _quickSort = array => {
+            // 补全代码
+            if (array.length === 0 || array === null) {
+                return [];
+            }
+            let leader = array[0];
+            let left = [];
+            let right = [];
+            // array.forEach(item => {
+            //     if (item < leader) {
+            //         left.push(item)
+            //     } else {
+            //         right.push(item)
+            //     }
+            // })
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] < leader) {
+                    left.push(array[i]);
+                } else {
+                    right.push(array[i]);
+                }
+            }
+            left = _quickSort(left);
+            right = _quickSort(right);
+            left.push(leader)
+            return left.concat(right)
+        }
+
+        console.log(_quickSort([0, -1, 1, -2, 2]))
+    </script>
+</body>
+
+</html>
