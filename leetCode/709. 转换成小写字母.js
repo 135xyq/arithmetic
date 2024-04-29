@@ -4,8 +4,6 @@
  * @param {string} s
  * @return {string}
  */
-var toLowerCase = function (s) {
+let toLowerCase = function (s) {
   return s.toLowerCase()
 };
-
-console.log(toLowerCase('ssHH'))
